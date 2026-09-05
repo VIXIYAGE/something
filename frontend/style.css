@@ -1,0 +1,522 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    background: #0a0a0a;
+
+    color: #e5e5e5;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* ================= NOISE ================= */
+
+.noise {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.04;
+
+    z-index: 10;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+
+/* ================= APP ================= */
+
+.app {
+
+    width: min(900px, 92%);
+
+    margin: auto;
+
+    padding: 35px 0 70px;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.logo-wrap {
+
+    position: relative;
+}
+
+
+.logo {
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    color: white;
+
+    animation:
+        invertPulse 4s infinite;
+}
+
+
+.logo span {
+
+    color: #777;
+
+}
+
+
+.logo-glitch {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    letter-spacing: -2px;
+
+    color: white;
+
+    opacity: 0;
+
+    animation: glitch 3s infinite;
+
+}
+
+
+.status {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #777;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    padding: 90px 0 70px;
+
+}
+
+
+.eyebrow {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h1 {
+
+    font-size: clamp(45px, 8vw, 85px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+
+}
+
+
+.hero h1 span {
+
+    color: #555;
+
+}
+
+
+.hero p {
+
+    max-width: 550px;
+
+    margin-top: 30px;
+
+    color: #777;
+
+    line-height: 1.7;
+
+}
+
+
+/* ================= PANEL ================= */
+
+.panel {
+
+    position: relative;
+
+    border: 1px solid #292929;
+
+    background: #101010;
+
+    padding: 35px;
+
+    margin-bottom: 25px;
+
+    transition: 0.3s;
+
+}
+
+
+.panel:hover {
+
+    border-color: #555;
+
+    transform: translateY(-2px);
+
+}
+
+
+.panel-number {
+
+    position: absolute;
+
+    right: 25px;
+
+    top: 25px;
+
+    font-size: 10px;
+
+    color: #444;
+
+}
+
+
+.panel h2 {
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.hint {
+
+    color: #666;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hint strong {
+
+    color: #aaa;
+
+}
+
+
+/* ================= DROP ZONE ================= */
+
+.drop-zone {
+
+    display: block;
+
+    border: 1px dashed #444;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.drop-zone:hover {
+
+    background: #181818;
+
+    border-color: #888;
+
+}
+
+
+.upload-icon {
+
+    font-size: 35px;
+
+    color: #777;
+
+    margin-bottom: 15px;
+
+}
+
+
+.file-title {
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+}
+
+
+.file-subtitle {
+
+    margin-top: 8px;
+
+    color: #555;
+
+    font-size: 11px;
+
+}
+
+
+/* ================= QUESTION ================= */
+
+textarea {
+
+    width: 100%;
+
+    min-height: 140px;
+
+    resize: vertical;
+
+    background: #080808;
+
+    border: 1px solid #292929;
+
+    color: white;
+
+    padding: 20px;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+textarea:focus {
+
+    border-color: #777;
+
+}
+
+
+/* ================= BUTTON ================= */
+
+.action {
+
+    margin: 35px 0;
+
+}
+
+
+button {
+
+    width: 100%;
+
+    border: none;
+
+    background: white;
+
+    color: black;
+
+    padding: 22px;
+
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    transition: 0.3s;
+
+}
+
+
+button:hover {
+
+    background: #bdbdbd;
+
+    letter-spacing: 5px;
+
+}
+
+
+.arrow {
+
+    font-size: 20px;
+
+}
+
+
+/* ================= OUTPUT ================= */
+
+.output {
+
+    background: #080808;
+
+    border-left: 2px solid #666;
+
+    padding: 25px;
+
+    min-height: 100px;
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+
+}
+
+
+.result {
+
+    display: none;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #222;
+
+    color: #444;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes invertPulse {
+
+    0%, 85%, 100% {
+        filter: invert(0);
+    }
+
+    88% {
+        filter: invert(1);
+    }
+
+    91% {
+        filter: invert(0);
+    }
+
+    94% {
+        filter: invert(1);
+    }
+}
+
+
+@keyframes glitch {
+
+    0%, 90%, 100% {
+        opacity: 0;
+        transform: translate(0);
+    }
+
+    92% {
+        opacity: 0.7;
+        transform: translate(-4px, 2px);
+    }
+
+    94% {
+        opacity: 0;
+    }
+
+    96% {
+        opacity: 0.5;
+        transform: translate(4px, -2px);
+    }
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .app {
+        width: 90%;
+    }
+
+    .hero {
+        padding: 60px 0;
+    }
+
+    .panel {
+        padding: 25px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}
